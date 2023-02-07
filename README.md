@@ -1,2 +1,2 @@
 # Cypress
-Learning test automation with Cypress.
+Learning test automation with Cypress...
