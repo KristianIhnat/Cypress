@@ -7,6 +7,3 @@ class loginPage {
     
 }
 
-//bla bla bla bla
-
-//halo halo
