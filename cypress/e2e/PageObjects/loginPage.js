@@ -1,6 +1,6 @@
 /// <reference types="Cypress" />
 
-class loginPage {
+class LoginPage {
     visit() {
         cy.visit('https://admin-demo.nopcommerce.com/login')
     }
