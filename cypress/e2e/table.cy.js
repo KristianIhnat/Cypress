@@ -17,6 +17,7 @@ describe('tes suite table', () => {
 
         cy.get('.ui-autocomplete-input').type('AMD Ryzen 7 5800X')
         cy.get('#btnSearch').click()
+        cy.get('.close').last().click()
 
         cy.get('#img6205103').click()
 
