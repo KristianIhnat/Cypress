@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": " node_modules\\.bin\\cypress run --config pageLoadTimeout=100000",
-    "runTests": "npm run test --" 
+    "runTests": "npm run test --" ,
+    "start": "my-server -p 3030",
+    "cy:run": "cypress run",
+    "testt": "start-server-and-test start http://localhost:3030 cy:run"
   },
   "author": "tino",
   "license": "ISC",
