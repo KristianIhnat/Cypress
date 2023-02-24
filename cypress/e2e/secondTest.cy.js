@@ -11,8 +11,12 @@ describe('example', () => {
         cy.get('.product:visible')
           .should('have.length', 4)
 
+        //alias=when we call multiple times one element, we can save it
+        //as('nameOfElement') and tnen call like ('@nameOfElement')
+        cy.get('.products').as('producElement')
+
         //Parent child chaining version 1
-        cy.get('.products')
+        cy.get('@producElement')
           .find('.product')
           .should('have.length', 4)
 
@@ -25,7 +29,10 @@ describe('example', () => {
           .should('have.length', 4)
           .eq(2)
           .contains('ADD TO CART')
-          .click()
+          .click().then(() => {
+            console.log('blabla') //if we want run console.log not immediately
+                                  //but after this step
+          })
 
         //Find element using each. It is similar as for loop, we are looking
         //for each 4 elements ($el) and when we find element wich has h4.product-name 
@@ -37,6 +44,13 @@ describe('example', () => {
              {
                 cy.wrap($el).find('button').click()
              }
+        })
+
+        cy.get('.brand').should('have.text', 'GREENKART')
+
+        //This is to print in logs
+        cy.get('.brand').then((logoelement) => {
+            cy.log(logoelement.text())
         })
     })
   })
