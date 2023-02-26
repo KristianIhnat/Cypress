@@ -17,5 +17,15 @@ describe('checkBoxes', () => {
             //we use commands from Mocha
             expect(str).to.equal('Hello , Are you sure you want to confirm?')
         })
+
+        // if element contains attribute 'target' that means, new page will
+        // be open in new window. When page is open on new window, cypress cant
+        // handle it and cant continue do tests. Therefore we want to remove
+        // attribute 'target' and open new window on current page
+        cy.get('#opentab').invoke('removeAttr', 'target').click()
+
+        cy.url().should('eq', 'https://www.rahulshettyacademy.com/')
+        
+        cy.go('back')
     })
 })
