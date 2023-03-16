@@ -8,4 +8,4 @@ describe('table2', () => {
         cy.contains('Top').click()
         cy.url().should('include', 'top')
     })
-})
+})  
