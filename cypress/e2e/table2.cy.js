@@ -9,8 +9,8 @@ describe('table2', () => {
             const text=$el.text()
             if (text.includes('Master Selenium Automation in simple Python Language')) 
             {//then we want to search and get sibling(next) element
-                cy.get('#product.table-display tr td:nth-child(2)').eq(index).next()
-                .then(function(price) { // then we have to solve promise using then()
+                cy.get('#product.table-display tr td:nth-child(2)').eq(index).next().then(function(price) {
+                 //.next() is jquery therefore we have to solve promise using then()
                     const priceText = price.text() //and then we can make assertion
                     expect(priceText).to.equal('25')
                 })
