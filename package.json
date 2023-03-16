@@ -9,7 +9,7 @@
   "author": "tino",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^12.6.0",
+    "cypress": "^12.8.1",
     "cypress-iframe": "^1.0.1",
     "start-server-and-test": "^1.15.4"
   }
