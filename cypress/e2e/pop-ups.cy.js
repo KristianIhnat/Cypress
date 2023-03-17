@@ -8,6 +8,7 @@ describe('checkBoxes', () => {
 
         //we have several browser events and when we want to do some assertion on events
         //e.g for alert (window:alert)
+        //cy.on is a method for trigger a event
         cy.on('window:alert', (str) => {
             //we use commands from Mocha
             expect(str).to.equal('Hello , share this practice page and share your knowledge')
@@ -22,6 +23,7 @@ describe('checkBoxes', () => {
         // be open in new window. When page is open on new window, cypress cant
         // handle it and cant continue do tests. Therefore we want to remove
         // attribute 'target' and open new window on current page
+        //we use .invoke() than we can use jquery method - removeAttr
         cy.get('#opentab').invoke('removeAttr', 'target').click()
 
         cy.url().should('eq', 'https://www.rahulshettyacademy.com/')
