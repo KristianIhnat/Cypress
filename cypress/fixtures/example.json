@@ -1,4 +1,6 @@
 {
+  "name": "Jozo",
+  "gender": "Female",
   "email": "hello@cypress.io",
-  "password": "abc123"
+  "password": "abc1234"
 }
