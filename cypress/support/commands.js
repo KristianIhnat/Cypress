@@ -48,3 +48,12 @@ Cypress.Commands.add('login', (email, password) => {
         cy.get('#Password').click()           
     })
 
+
+    Cypress.Commands.add('selectProduct', (productName) => { 
+        cy.get('.card-title').each(($el, index, $list) => {
+        if($el.text().includes('iphone X'))
+        {
+            cy.get('.btn.btn-info').eq(index).click()
+        }
+    })})
+    
