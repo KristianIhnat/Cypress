@@ -2,5 +2,6 @@
   "name": "Jozo",
   "gender": "Female",
   "email": "hello@cypress.io",
-  "password": "abc1234"
+  "password": "abc1234",
+  "productName": ["Blackberry", "Nokia Edge"]
 }
