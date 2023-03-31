@@ -13,7 +13,7 @@ describe('hooks', () => {
         Cypress.config('defaultCommandTimeout', 12000)
         const homePage= new HomePage()
         const productPage= new ProductPage()
-        cy.visit('https://rahulshettyacademy.com/angularpractice/')
+        cy.visit(Cypress.env('url')+'/angularpractice/')
         homePage.getEditBox().type(this.data.name)
         homePage.getGender().select(this.data.gender)
         homePage.getTwoWayDatabinding().should('have.value', this.data.name)
