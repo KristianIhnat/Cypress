@@ -9,6 +9,8 @@ describe('hooks', () => {
         })
     })
     it('fixturesDemo', function() {
+        //larger timeout for this praticular spec
+        Cypress.config('defaultCommandTimeout', 12000)
         const homePage= new HomePage()
         const productPage= new ProductPage()
         cy.visit('https://rahulshettyacademy.com/angularpractice/')
@@ -27,6 +29,29 @@ describe('hooks', () => {
         })
 
         productPage.checkoutButton().click()
+
+        var sum = 0
+        cy.get('tr td:nth-child(4) strong').each(($el, index, $list) => {
+            const adjustText = $el.text()
+            //We have to remove specific symbol and space
+            //When we use var we can re-use this variable
+            var result = adjustText.split(" ")
+            result = result[1].trim()
+            //Number() change string to number
+            sum=Number(sum)+Number(result)
+            //We have to solve promise
+        }).then(function(){
+            cy.log(sum)
+        })
+        
+        //Now we compare values
+        cy.get('h3 > strong').each(($el, index, $list) => {
+            const adjustText = $el.text()
+            var result = adjustText.split(" ")
+            result = result[1].trim()
+            expect(Number(result)).to.equal(Number(sum))
+        })
+
         productPage.checkoutButton2().click()
         productPage.typeCountry().type('Slovakia')
         cy.wait(5000)
@@ -34,5 +59,11 @@ describe('hooks', () => {
         cy.get('.checkbox > label').click()
         cy.get('.ng-untouched > .btn').click()
         cy.get('.alert').contains('Success! Thank you! Your order will be delivered in next few weeks :-).')
+        //another option
+        cy.get('.alert').then(function(el){
+            const actualText = el.text()
+            expect(actualText.includes("Success! Thank you! Your order will be delivered in next few weeks"))
+            .to.be.true
+        })
     })  
 })
