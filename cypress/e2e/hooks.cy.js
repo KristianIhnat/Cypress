@@ -9,7 +9,7 @@ describe('hooks', () => {
         })
     })
     it('fixturesDemo', function() {
-        //larger timeout for this praticular spec
+       //larger timeout for this praticular spec
         Cypress.config('defaultCommandTimeout', 12000)
         const homePage= new HomePage()
         const productPage= new ProductPage()
