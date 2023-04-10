@@ -9,12 +9,12 @@
   "author": "tino",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^12.8.1",
+    "cypress": "^12.9.0",
     "cypress-iframe": "^1.0.1",
     "start-server-and-test": "^1.15.4"
   },
   "dependencies": {
-    "@badeball/cypress-cucumber-preprocessor": "^16.0.3",
+    "@badeball/cypress-cucumber-preprocessor": "^15.0.0",
     "@cypress/browserify-preprocessor": "latest"
   }
 }

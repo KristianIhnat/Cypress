@@ -30,6 +30,8 @@ describe('hooks', () => {
 
         productPage.checkoutButton().click()
 
+        
+
         var sum = 0
         cy.get('tr td:nth-child(4) strong').each(($el, index, $list) => {
             const adjustText = $el.text()
