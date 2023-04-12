@@ -1,7 +1,7 @@
 /// <reference types="Cypress" />
 import HomePage from './PageObjects/homePage'
 import ProductPage from './PageObjects/productPage'
-
+//just test
 describe('hooks', () => {
       before(() => {
         cy.fixture('example').then(function (data) {
